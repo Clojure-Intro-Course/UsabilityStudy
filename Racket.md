@@ -4,6 +4,9 @@ You will be using [Intermediate Student with lambda](https://docs.racket-lang.or
 
 Below is a very brief review of Racket elements used in this study, with examples and links to Racket documentation. 
 
+### How to run a Racket program
+To-do: How to run (button/Ctrl-R), how to stop a looping program. 
+
 ### Infix notation
 Racket follows infix notation, i.e. expressions are of the form `(function arg1 arg2...)`:
 ```racket
@@ -25,6 +28,11 @@ Racket follows infix notation, i.e. expressions are of the form `(function arg1 
 (f n)
 ```
 Documentation for [define](https://docs.racket-lang.org/htdp-langs/intermediate-lam.html#%28form._%28%28lib._lang%2Fhtdp-intermediate-lambda..rkt%29._define%29%29)
+
+### Common functions on numbers and strings
+```racket
+
+```
 
 ### Conditions and 'if'
 The `if` statement is an expression that checks a if a condition is true, and one of the remaining two arguments, depending on whether the condition is true or false:
@@ -55,11 +63,6 @@ You can combine conditions using `and` and `or` and negate them using `not`:
 ```
 Links for more details on [`and` and `or`](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._and%29%29).
 
-### Common functions on numbers and strings
-```racket
-
-```
-
 ### Defining and using structures
 
 ### Lists, recursion on lists
@@ -67,7 +70,7 @@ Links for more details on [`and` and `or`](https://docs.racket-lang.org/htdp-lan
 
 ### Common functions on lists
 
-### Map, foldl, and other functions on lists
+### map, foldl, and other functions on lists
 
 ### Anonymous functions with lambda
 
