@@ -42,7 +42,7 @@ Our examples will not be using `cond` conditional, but here is a reminder on it 
 ```
 This expression returns the string "apple" if `n`is less than 5, "banana" if it's greater than 5, and "orange" if it's equal to 5. 
 
-Links for more details on [`if`](https://docs.racket-lang.org/guide/syntax-overview.html#%28part._.Conditionals_with_if__and__or__and_cond%29) and [`cond`](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._cond%29%29).
+Links for more details on [`if`](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._if%29%29) and [`cond`](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._cond%29%29).
 
 You can combine conditions using `and` and `or` and negate them using `not`:
 ```racket
@@ -53,7 +53,7 @@ You can combine conditions using `and` and `or` and negate them using `not`:
 (if (or (<= x 5) (= y 5)) "hi" "bye") ; returns "hi"
 (if (not (<= x 5)) "hi" "bye") ; returns "bye"
 ```
-Links for more details on [`and` and `or`](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._if%29%29, ).
+Links for more details on [`and` and `or`](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._and%29%29).
 
 ### Common functions on numbers and strings
 ```racket
