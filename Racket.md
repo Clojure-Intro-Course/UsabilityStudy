@@ -33,7 +33,7 @@ The `if` statement is an expression that checks a if a condition is true, and on
 (if (< n 10) 2 3) ; returns 2
 (if (< n 2) 2 3)  ; returns 3
 ```
-Our examples will not be using `cond` conditional, but here is a reminder on it in case you would like to use it:
+If you have more than two cases in a conditional, it's  convenient to use `cond` conditional:
 ```racket
 (cond
   [(< n 5) "apple"]
