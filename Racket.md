@@ -118,10 +118,33 @@ Common functions on lists include `first` (returns the first element of a list),
 Applying `first` or `rest` to an empty list results in an error. 
 
 ### Recursion on lists
-TO-DO: need to be careful to avoid the study examples. 
-```racket
+Recursion on lists typically involves the base case of an empty list and a recursive case that
+combines some operation on the first of the list with the result of a recursive call on the rest of the list. 
 
+The following function adds all elements of a list of numbers: 
+```racket
+(define (add-all numbers)
+  (if (empty? numbers)
+      0 ; base case
+      (+ (first numbers) (add-all (rest numbers))))) ; recursive call
+
+(add-all '(3 4 5 2)) ; results in 14
+
+(add-all '()) ; results in 0
 ```
+There may be cases when a recursive function takes more than one parameter. The following function returns the first n elements of a list:
+```racket
+(define (take-n elements n)
+  (if (or (empty? elements) (<= n 0))
+      empty
+      (cons (first elements) (take-n (rest elements) (- n 1)))))
+      
+(take-n '(2 5 6 7 1) 3) ; results in (list 2 5 6)
+(take-n '(2 5 6 7 1) 10) ; results in (list 2 5 6 7 1)
+(take-n '(2 5 6 7 1) 0) ; results in an empty list
+```
+
+<!--- TO-DO: need to be careful to avoid the study examples. --->
 
 ### map, foldl, and other functions on lists
 Higher order functions on lists, such as `map, filter, foldr` provide a way of performing many types of common list operations without having to write recursive functions. 
