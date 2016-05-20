@@ -146,7 +146,7 @@ There may be cases when a recursive function takes more than one parameter. The 
 
 <!--- TO-DO: need to be careful to avoid the study examples. --->
 
-### map, foldl, and other functions on lists
+### map, foldr, and other functions on lists
 Higher order functions on lists, such as `map, filter, foldr` provide a way of performing many types of common list operations without having to write recursive functions. 
 
 `map` takes a function and a list and returns a new list which is the result of applying the function to each element:
@@ -179,8 +179,17 @@ We can also use `foldr` to combine all strings in a list into one string:
 See documentation for [foldr](https://docs.racket-lang.org/htdp-langs/intermediate-lam.html#%28def._htdp-intermediate-lambda._%28%28lib._lang%2Fhtdp-intermediate-lambda..rkt%29._foldr%29%29)
 
 ### Anonymous functions with lambda
+Calling higher-order functions, such as `map,filter`, etc., with simple, but not predefined, functions can be done by creating a function without a name (i.e. anonymous) on-the-fly using a `lambda` keyword. 
+
+The keyword `lambda` is followed by parameter(s) in parentheses, and then the body of the function. For instance, 
+`(lambda (x) (+ x 2))` is a function of one parameter `x` that returns the result of adding 2 to `x`. We can use this function in `map` to create a new list by adding 2 to every element of a given list: 
+```racket
+(map (lambda (x) (+ x 2)) '(2 3 1)) ; results in (list 4 5 3)
+```
+We can also use anonymous functions in `filter` (the function must resturn true/false) and in `foldr`. In the case of `foldr` the anonymous function takes two parameters, just like `+` does.  
 ```racket
 
 ```
 
+More details on [lambda](http://www.ccs.neu.edu/home/matthias/HtDP2e/part_three.html#%28part._sec~3aint-lambda%29).
 
