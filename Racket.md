@@ -90,7 +90,7 @@ To access a specific field of a structure, you need to use a selector. A selecto
 ```
 Links for more details on [structures](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._define-struct%29%29) and the [textbook chapter on structures](http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html#%28part._sec~3astructures%29) 
 
-### Lists, recursion on lists
+### Lists
 There are multiple ways of creating lists in Racket. We will be using the quote symbol `'` to create a list: 
 ```racket
 '(1 2 3) ; results in the list '(1 2 3), also displayed as (list 1 2 3)
@@ -117,9 +117,47 @@ Common functions on lists include `first` (returns the first element of a list),
 ```
 Applying `first` or `rest` to an empty list results in an error. 
 
-### map, foldl, and other functions on lists
+### Recursion on lists
+TO-DO: need to be careful to avoid the study examples. 
+```racket
 
+```
+
+### map, foldl, and other functions on lists
+Higher order functions on lists, such as `map, filter, foldr` provide a way of performing many types of common list operations without having to write recursive functions. 
+
+`map` takes a function and a list and returns a new list which is the result of applying the function to each element:
+```racket
+(map add1 '(3 2 -1)) ; results in (list 4 3 0)
+(map string-length '("hi" "bye" "")) ; results in (list 2 3 0)
+```
+See documentation for [map](https://docs.racket-lang.org/htdp-langs/intermediate-lam.html#%28def._htdp-intermediate-lambda._%28%28lib._lang%2Fhtdp-intermediate-lambda..rkt%29._map%29%29)
+
+`filter` takes a predicate (a function that returns true or false) and a list and creates a new list with only the elements of the given list that satisfy the predicate:
+```racket
+(filter odd? '(2 3 5 4 0 7)) ; results in (list 3 5 7)
+
+(define (short? str)
+  (<= (string-length str) 5))
+
+(filter short? '("apple" "avocado" "kiwi" "banana")) ; results in (list "apple" "kiwi")
+```
+See documentation for [filter](https://docs.racket-lang.org/htdp-langs/intermediate-lam.html#%28def._htdp-intermediate-lambda._%28%28lib._lang%2Fhtdp-intermediate-lambda..rkt%29._filter%29%29)
+
+`foldr` takes a function, a value to be returned from the base case, and a list, and returns the result of repeatedly applying the function to the current list element and the accumulated result. The simplest, and most common, example is adding all elements in a list of numbers:
+```racket
+(define numbers '(3 5 4))
+(foldr + 0 numbers) ; results in 12
+```
+We can also use `foldr` to combine all strings in a list into one string:
+```racket
+(foldr string-append "" '("Hi " "there," " " "how " "are " "you?")) ; results in "Hi there, how are you?"
+```
+See documentation for [foldr](https://docs.racket-lang.org/htdp-langs/intermediate-lam.html#%28def._htdp-intermediate-lambda._%28%28lib._lang%2Fhtdp-intermediate-lambda..rkt%29._foldr%29%29)
 
 ### Anonymous functions with lambda
+```racket
+
+```
 
 
