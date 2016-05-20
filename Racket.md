@@ -31,8 +31,17 @@ Documentation for [define](https://docs.racket-lang.org/htdp-langs/intermediate-
 
 ### Common functions on numbers and strings
 ```racket
+;; common functions on numbers
+(+ 2 3) ; results in 5
+(* 2 3 4) ; results in 24
+;; predicates (functions that return true/false) often end with ?
+(even? 3) ; results in false
+(odd? 3) ; results in true
 
+;; find out the length of a string:
+(string-length "abc") ; results in 3
 ```
+Documentation for [common numeric functions](https://docs.racket-lang.org/htdp-langs/beginner.html#%28part._htdp-beginner._.Numbers__.Integers__.Rationals__.Reals__.Complex__.Exacts__.Inexacts%29)
 
 ### Conditions and 'if'
 The `if` statement is an expression that checks a if a condition is true, and one of the remaining two arguments, depending on whether the condition is true or false:
@@ -64,6 +73,14 @@ You can combine conditions using `and` and `or` and negate them using `not`:
 Links for more details on [`and` and `or`](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._and%29%29).
 
 ### Defining and using structures
+Structures allow you to combine multiple data items into one entity with multiple fields. A structure datatype is defined by `define-struct`, and structure instances are created by `make-` followed by the structure name (known as a _constructor_): 
+```racket
+;; define a structure type date with fields day, month, year
+(define-struct date (day month year)) 
+;; create two instances:
+(define end-of-semester (make-date 6 "May" 2016))
+(define 4th-of-July (make-date 4 "July" 2016))
+```
 
 ### Lists, recursion on lists
 <-- Note: we use if for recursion, not cond -->
