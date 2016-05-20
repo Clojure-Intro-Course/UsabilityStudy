@@ -76,18 +76,49 @@ Links for more details on [`and` and `or`](https://docs.racket-lang.org/htdp-lan
 Structures allow you to combine multiple data items into one entity with multiple fields. A structure datatype is defined by `define-struct`, and structure instances are created by `make-` followed by the structure name (known as a _constructor_): 
 ```racket
 ;; define a structure type date with fields day, month, year
-(define-struct date (day month year)) 
+(define-struct date (day month year)) ;; (define-struct date [day month year]) also works
 ;; create two instances:
 (define end-of-semester (make-date 6 "May" 2016))
 (define 4th-of-July (make-date 4 "July" 2016))
 ```
+Note that the structures are displayed with their constuctor. For instances, typing `end-of-semester` in the interpreter will result in `(make-date 6 "May" 2016)`
+
+To access a specific field of a structure, you need to use a selector. A selector has the form of the structure name, followed by a dash `-`, followed by the field name:
+```racket
+(date-month end-of-semester) ; results in "May"
+(date-day 4th-of-July) ; results in 4
+```
+Links for more details on [structures](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._define-struct%29%29) and the [textbook chapter on structures](http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html#%28part._sec~3astructures%29) 
 
 ### Lists, recursion on lists
-<-- Note: we use if for recursion, not cond -->
+There are multiple ways of creating lists in Racket. We will be using the quote symbol `'` to create a list: 
+```racket
+'(1 2 3) ; results in the list '(1 2 3), also displayed as (list 1 2 3)
+```
+It is possible to combine different types of elements in the same list:
+```racket
+'(1 "two" 3.0001) 
+```
+A list with no elements is known as an empty list and can be created as`'()` or, equivalently, as `empty`.
 
 ### Common functions on lists
+Common functions on lists include `first` (returns the first element of a list), `rest` (returns the rest of the list), and a predicate `empty?` that returns `true` if the list is empty and `false` otherwise:
+```racket
+(define numbers '(3 5 4))
+(define short-list '(7))
+
+(first numbers) ; results in 3
+(first short-list) ; results in 7
+(rest numbers) ; results in (list 5 4)
+(rest short-list) ; results in empty
+(empty? numbers) ; results in false
+(empty? short-list) ; results in false
+(empty? (rest short-list)) ; results in true
+```
+Applying `first` or `rest` to an empty list results in an error. 
 
 ### map, foldl, and other functions on lists
+
 
 ### Anonymous functions with lambda
 
