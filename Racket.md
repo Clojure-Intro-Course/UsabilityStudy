@@ -186,9 +186,14 @@ The keyword `lambda` is followed by parameter(s) in parentheses, and then the bo
 ```racket
 (map (lambda (x) (+ x 2)) '(2 3 1)) ; results in (list 4 5 3)
 ```
-We can also use anonymous functions in `filter` (the function must resturn true/false) and in `foldr`. In the case of `foldr` the anonymous function takes two parameters, just like `+` does.  
+We can also use anonymous functions in `filter` (the function must resturn true/false): 
 ```racket
+(filter (lambda (x) (>= x 5)) '(5 2 6 7 1 8)) ; results in (list 5 6 7 8)
+```
 
+In the case of `foldr` the anonymous function takes two parameters. The first one is list element, and the second one is the current accumulated result. For instance, the anonymous function below is used to compute the sum of the lengths of all strings in the given list. Here x will refer to each string of the list in turn, and y would respresent the sum of the lengths of all strings to the right of the string x:
+```racket
+(foldr (lambda (x y) (+ (string-length x) y)) 0 '("hi" "bye" "hello")) ; results in 10
 ```
 
 More details on [lambda](http://www.ccs.neu.edu/home/matthias/HtDP2e/part_three.html#%28part._sec~3aint-lambda%29).
