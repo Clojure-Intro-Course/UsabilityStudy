@@ -5,7 +5,9 @@ You will be using [Intermediate Student with lambda](https://docs.racket-lang.or
 Below is a very brief review of Racket elements used in this study, with examples and links to Racket documentation. 
 
 ### How to run a Racket program
-To-do: How to run (button/Ctrl-R), how to stop a looping program. 
+Copy-paste the examples into the upper panel of the Racket window. You can run your program by pressing the Run button or Ctrl-R. The results and error messages will appear in the lower panel. 
+
+If your program starts and doesn't stop (the little figure in the right lower corner is running), press the red square at the top right to stop it. 
 
 ### Infix notation
 Racket follows infix notation, i.e. expressions are of the form `(function arg1 arg2...)`:
