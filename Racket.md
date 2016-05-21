@@ -45,7 +45,7 @@ Documentation for [define](https://docs.racket-lang.org/htdp-langs/intermediate-
 ```
 Documentation for [common numeric functions](https://docs.racket-lang.org/htdp-langs/beginner.html#%28part._htdp-beginner._.Numbers__.Integers__.Rationals__.Reals__.Complex__.Exacts__.Inexacts%29)
 
-### Conditions and 'if'
+### Conditionals: 'if', 'cond', and combining conditions
 The `if` statement is an expression that checks a if a condition is true, and one of the remaining two arguments, depending on whether the condition is true or false:
 ```racket
 (define n 5)
