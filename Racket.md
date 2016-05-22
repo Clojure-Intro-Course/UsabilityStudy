@@ -32,6 +32,7 @@ Racket follows prefix notation, i.e. expressions are of the form `(function arg1
 Documentation for [define](https://docs.racket-lang.org/htdp-langs/intermediate-lam.html#%28form._%28%28lib._lang%2Fhtdp-intermediate-lambda..rkt%29._define%29%29)
 
 ### Common functions on numbers and strings
+Coomon functions on numbers include the standard arithmetic operations and some predicates that allow us to check whether a number has a given property (for instance, whether it's even). There are functions `add1` and `sub1` that return the next or the previous integer for a given integer, see examples below. There are also many functions on strings, but our examples do not use them much. The `string-length` function below is a reminder of how string functions work in Racket. 
 ```racket
 ;; common functions on numbers
 (+ 2 3) ; results in 5
@@ -39,6 +40,10 @@ Documentation for [define](https://docs.racket-lang.org/htdp-langs/intermediate-
 ;; predicates (functions that return true/false) often end with ?
 (even? 3) ; results in false
 (odd? 3) ; results in true
+
+;; add 1 and subtract 1 functions:
+(add1 5) ; results in 6
+(sub1 5) ; results in 4   
 
 ;; find out the length of a string:
 (string-length "abc") ; results in 3
