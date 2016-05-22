@@ -9,8 +9,8 @@ Copy-paste the examples into the upper panel of the Racket window. You can run y
 
 If your program starts and doesn't stop (the little figure in the right lower corner is running), press the red square at the top right to stop it. 
 
-### Infix notation
-Racket follows infix notation, i.e. expressions are of the form `(function arg1 arg2...)`:
+### Prefix notation
+Racket follows prefix notation, i.e. expressions are of the form `(function arg1 arg2...)`:
 ```racket
 (+ 1 2 3 4) ; returns 10
 (even? 2) ; returns true
