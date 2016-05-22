@@ -41,7 +41,20 @@ Functions are defined using the `defn` keyword. The function parameters are incl
 ```
 Just like in Racket, variable and function names may contain letters, digits, dashes, some punctuation symbols (`?` and `!`). The names are case-sensitive. 
 
+See documentation on [def](https://clojuredocs.org/clojure.core/def) and [defn](https://clojuredocs.org/clojure.core/defn)
+
 ### Common functions 
+Many functions on numbers are the the same in Clojure and Racket. This includes most of arithmetic operations, comparisons, and predicates: 
+```clojure 
+;; common functions on numbers
+(+ 2 3) ; results in 5
+(* 2 3 4) ; results in 24
+;; predicates (functions that return true/false) often end with ?
+(even? 3) ; results in false
+(odd? 3) ; results in true
+
+TO-DO: inc, dec
+```
 
 ### Conditionals: 'if', 'cond', and combining conditions
 
