@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Clojure-Intro-Course/UsabilityStudy/issues"
   },
-  "homepage": "https://github.com/Clojure-Intro-Course/UsabilityStudy#readme"
+  "homepage": "https://github.com/Clojure-Intro-Course/UsabilityStudy#readme",
+  "dependencies": {
+    "markdown-toc": "^0.12.11"
+  }
 }
