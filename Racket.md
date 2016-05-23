@@ -202,7 +202,7 @@ The keyword `lambda` is followed by parameter(s) in parentheses, and then the bo
 ```racket
 (map (lambda (x) (+ x 2)) '(2 3 1)) ; results in (list 4 5 3)
 ```
-We can also use anonymous functions in `filter` (the function must resturn true/false): 
+We can also use anonymous functions in `filter` (the function must return true/false): 
 ```racket
 (filter (lambda (x) (>= x 5)) '(5 2 6 7 1 8)) ; results in (list 5 6 7 8)
 ```
