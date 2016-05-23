@@ -1,4 +1,4 @@
-#Summary 
+#Table of Contents
 
   - [Review of Racket](#section-id-1)
     - [How to run a Racket program](#section-id-7)
@@ -12,23 +12,23 @@
     - [Recursion on lists](#section-id-136)
     - [map, foldr, and other functions on lists](#section-id-165)
     - [Anonymous functions with lambda](#section-id-197)
-  
+
 
 
 <div id='section-id-1'/>
 
 ## Review of Racket
 
-You will be using [Intermediate Student with lambda](https://docs.racket-lang.org/htdp-langs/intermediate-lam.html) level of Racket. Also make sure that in "Choose language" menu the Constant Style is set to "true false empty". 
+You will be using [Intermediate Student with lambda](https://docs.racket-lang.org/htdp-langs/intermediate-lam.html) level of Racket. Also make sure that in "Choose language" menu the Constant Style is set to "true false empty".
 
-Below is a very brief review of Racket elements used in this study, with examples and links to Racket documentation. 
+Below is a very brief review of Racket elements used in this study, with examples and links to Racket documentation.
 
 <div id='section-id-7'/>
 
 ### How to run a Racket program
-Copy-paste the examples into the upper panel of the Racket window. You can run your program by pressing the Run button or Ctrl-R. The results and error messages will appear in the lower panel. 
+Copy-paste the examples into the upper panel of the Racket window. You can run your program by pressing the Run button or Ctrl-R. The results and error messages will appear in the lower panel.
 
-If your program starts and doesn't stop (the little figure in the right lower corner is running), press the red square at the top right to stop it. 
+If your program starts and doesn't stop (the little figure in the right lower corner is running), press the red square at the top right to stop it.
 
 <div id='section-id-12'/>
 
@@ -59,7 +59,7 @@ Documentation for [define](https://docs.racket-lang.org/htdp-langs/intermediate-
 <div id='section-id-34'/>
 
 ### Common functions on numbers and strings
-Coomon functions on numbers include the standard arithmetic operations and some predicates that allow us to check whether a number has a given property (for instance, whether it's even). There are functions `add1` and `sub1` that return the next or the previous integer for a given integer, see examples below. There are also many functions on strings, but our examples do not use them much. The `string-length` function below is a reminder of how string functions work in Racket. 
+Coomon functions on numbers include the standard arithmetic operations and some predicates that allow us to check whether a number has a given property (for instance, whether it's even). There are functions `add1` and `sub1` that return the next or the previous integer for a given integer, see examples below. There are also many functions on strings, but our examples do not use them much. The `string-length` function below is a reminder of how string functions work in Racket.
 ```racket
 ;; common functions on numbers
 (+ 2 3) ; results in 5
@@ -93,7 +93,7 @@ If you have more than two cases in a conditional, it's  convenient to use `cond`
   [(> n 5) "banana"]
   [else "orange"])
 ```
-This expression returns the string "apple" if `n`is less than 5, "banana" if it's greater than 5, and "orange" if it's equal to 5. 
+This expression returns the string "apple" if `n`is less than 5, "banana" if it's greater than 5, and "orange" if it's equal to 5.
 
 Links for more details on [`if`](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._if%29%29) and [`cond`](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._cond%29%29).
 
@@ -111,7 +111,7 @@ Links for more details on [`and` and `or`](https://docs.racket-lang.org/htdp-lan
 <div id='section-id-82'/>
 
 ### Defining and using structures
-Structures allow you to combine multiple data items into one entity with multiple fields. A structure datatype is defined by `define-struct`, and structure instances are created by `make-` followed by the structure name (known as a _constructor_): 
+Structures allow you to combine multiple data items into one entity with multiple fields. A structure datatype is defined by `define-struct`, and structure instances are created by `make-` followed by the structure name (known as a _constructor_):
 ```racket
 ;; define a structure type date with fields day, month, year
 (define-struct date (day month year)) ;; (define-struct date [day month year]) also works
@@ -126,18 +126,18 @@ To access a specific field of a structure, you need to use a selector. A selecto
 (date-month end-of-semester) ; results in "May"
 (date-day 4th-of-July) ; results in 4
 ```
-Links for more details on [structures](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._define-struct%29%29) and the [textbook chapter on structures](http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html#%28part._sec~3astructures%29) 
+Links for more details on [structures](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._define-struct%29%29) and the [textbook chapter on structures](http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html#%28part._sec~3astructures%29)
 
 <div id='section-id-100'/>
 
 ### Lists
-There are multiple ways of creating lists in Racket. We will be using the quote symbol `'` to create a list: 
+There are multiple ways of creating lists in Racket. We will be using the quote symbol `'` to create a list:
 ```racket
 '(1 2 3) ; results in the list '(1 2 3), also displayed as (list 1 2 3)
 ```
 It is possible to combine different types of elements in the same list:
 ```racket
-'(1 "two" 3.0001) 
+'(1 "two" 3.0001)
 ```
 A list with no elements is known as an empty list and can be created as`'()` or, equivalently, as `empty`.
 
@@ -157,14 +157,14 @@ Common functions on lists include `first` (returns the first element of a list),
 (empty? short-list) ; results in false
 (empty? (rest short-list)) ; results in true
 ```
-Applying `first` or `rest` to an empty list results in an error. 
+Applying `first` or `rest` to an empty list results in an error.
 
-The function `cons` creates a new list by adding an element at the front of a given list: 
+The function `cons` creates a new list by adding an element at the front of a given list:
 ```racket
 (cons 0 '(3 5 4)) ; results in (list 0 3 4 5)
 (cons 1 '()) ; results in (list 1)
 ```
-The original list is unchanged. 
+The original list is unchanged.
 
 See documentation for [cons](https://docs.racket-lang.org/htdp-langs/beginner.html#%28def._htdp-beginner._%28%28lib._lang%2Fhtdp-beginner..rkt%29._cons%29%29)
 
@@ -172,9 +172,9 @@ See documentation for [cons](https://docs.racket-lang.org/htdp-langs/beginner.ht
 
 ### Recursion on lists
 Recursion on lists typically involves the base case of an empty list and a recursive case that
-combines some operation on the first of the list with the result of a recursive call on the rest of the list. 
+combines some operation on the first of the list with the result of a recursive call on the rest of the list.
 
-The following function adds all elements of a list of numbers: 
+The following function adds all elements of a list of numbers:
 ```racket
 (define (add-all numbers)
   (if (empty? numbers)
@@ -191,7 +191,7 @@ There may be cases when a recursive function takes more than one parameter. The 
   (if (or (empty? elements) (<= n 0))
       empty
       (cons (first elements) (take-n (rest elements) (- n 1)))))
-      
+
 (take-n '(2 5 6 7 1) 3) ; results in (list 2 5 6)
 (take-n '(2 5 6 7 1) 10) ; results in (list 2 5 6 7 1)
 (take-n '(2 5 6 7 1) 0) ; results in an empty list
@@ -202,7 +202,7 @@ There may be cases when a recursive function takes more than one parameter. The 
 <div id='section-id-165'/>
 
 ### map, foldr, and other functions on lists
-Higher order functions on lists, such as `map, filter, foldr` provide a way of performing many types of common list operations without having to write recursive functions. 
+Higher order functions on lists, such as `map, filter, foldr` provide a way of performing many types of common list operations without having to write recursive functions.
 
 `map` takes a function and a list and returns a new list which is the result of applying the function to each element:
 ```racket
@@ -236,14 +236,14 @@ See documentation for [foldr](https://docs.racket-lang.org/htdp-langs/intermedia
 <div id='section-id-197'/>
 
 ### Anonymous functions with lambda
-Calling higher-order functions, such as `map,filter`, etc., with simple, but not predefined, functions can be done by creating a function without a name (i.e. anonymous) on-the-fly using a `lambda` keyword. 
+Calling higher-order functions, such as `map,filter`, etc., with simple, but not predefined, functions can be done by creating a function without a name (i.e. anonymous) on-the-fly using a `lambda` keyword.
 
-The keyword `lambda` is followed by parameter(s) in parentheses, and then the body of the function. For instance, 
-`(lambda (x) (+ x 2))` is a function of one parameter `x` that returns the result of adding 2 to `x`. We can use this function in `map` to create a new list by adding 2 to every element of a given list: 
+The keyword `lambda` is followed by parameter(s) in parentheses, and then the body of the function. For instance,
+`(lambda (x) (+ x 2))` is a function of one parameter `x` that returns the result of adding 2 to `x`. We can use this function in `map` to create a new list by adding 2 to every element of a given list:
 ```racket
 (map (lambda (x) (+ x 2)) '(2 3 1)) ; results in (list 4 5 3)
 ```
-We can also use anonymous functions in `filter` (the function must return true/false): 
+We can also use anonymous functions in `filter` (the function must return true/false):
 ```racket
 (filter (lambda (x) (>= x 5)) '(5 2 6 7 1 8)) ; results in (list 5 6 7 8)
 ```
@@ -254,4 +254,3 @@ In the case of `foldr` the anonymous function takes two parameters. The first on
 ```
 
 More details on [lambda](http://www.ccs.neu.edu/home/matthias/HtDP2e/part_three.html#%28part._sec~3aint-lambda%29).
-

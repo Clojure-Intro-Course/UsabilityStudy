@@ -1,4 +1,4 @@
-#Summary 
+#Table of Contents
 
   - [Brief Overview of Clojure](#section-id-2)
     - [How to run a Clojure program](#section-id-6)
