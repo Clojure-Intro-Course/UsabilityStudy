@@ -1,12 +1,35 @@
+#Summary 
+
+  - [Brief Overview of Clojure](#section-id-2)
+    - [How to run a Clojure program](#section-id-6)
+    - [Syntax](#section-id-11)
+    - [Defining variables and functions](#section-id-20)
+    - [Common functions](#section-id-46)
+    - [Conditionals: 'if', 'cond', and combining conditions](#section-id-68)
+    - [nil](#section-id-100)
+    - [Hashmaps](#section-id-108)
+    - [Lists and common list functions](#section-id-130)
+    - [Recursion on lists](#section-id-170)
+    - [map, reduce, and similar functions on lists](#section-id-194)
+    - [Anonymous functions](#section-id-225)
+  
+
+
+
+<div id='section-id-2'/>
 
 ## Brief Overview of Clojure
 
 This is a very brief overview of a subset of Clojure features for those familiar with the Racket programming language. It is intended for a usability study at UMM and assumes a non-standard Clojure environment. 
 
+<div id='section-id-6'/>
+
 ### How to run a Clojure program
 Note: the instrcutions are specific to this usability study. 
 
 *TO-DO*: instructions. 
+
+<div id='section-id-11'/>
 
 ### Syntax
 Just like Racket, Clojure follows the prefix notation: `(function arg1 arg2...)`. A lot of functions on numbers have the same names as in Racket, so all of the following is valid in Clojure as well. Comments are also the same: `;`. 
@@ -16,6 +39,8 @@ Just like Racket, Clojure follows the prefix notation: `(function arg1 arg2...)`
 (<= 4 3) ; returns false
 ```
 TO-DO: println (since the tests will run using println). 
+
+<div id='section-id-20'/>
 
 ### Defining variables and functions
 Functions and variable defintions are somewhat different from those in Racket. Variables are defined using the `def` keyword, instead of Racket's `define`:
@@ -43,6 +68,8 @@ Just like in Racket, variable and function names may contain letters, digits, da
 
 See documentation on [def](https://clojuredocs.org/clojure.core/def) and [defn](https://clojuredocs.org/clojure.core/defn)
 
+<div id='section-id-46'/>
+
 ### Common functions 
 Many functions on numbers are the the same in Clojure and Racket. This includes most of arithmetic operations, comparisons, and predicates: 
 ```clojure 
@@ -64,6 +91,8 @@ The length of a string is computed using the function `count`:
 ```clojure 
 (count "abc") ; results in 3
 ```
+
+<div id='section-id-68'/>
 
 ### Conditionals: 'if', 'cond', and combining conditions
 Conditions in Clojure are very similar to those in Racket. For instance, `if` looks identical to that in Racket:
@@ -97,6 +126,8 @@ See documentation on [cond](https://clojuredocs.org/clojure.core/cond).
 ```
 See documentation for [and](https://clojuredocs.org/clojure.core/and), [or](https://clojuredocs.org/clojure.core/or), and [not](https://clojuredocs.org/clojure.core/not).
 
+<div id='section-id-100'/>
+
 ### nil
 `nil` is a special value in Clojure. You can think of it as meaning "nothing" or "no answer". The convention is to return `nil` from functions that do not return any meaningful value, as you will see below for hashmaps and lists. `nil` is different from any other value in Clojure. 
 
@@ -104,6 +135,8 @@ As you have seen above, `nil` is interpreted to be false in boolean expressions:
 ```clojure 
 (if nil 2 3) ; results in 3
 ``` 
+
+<div id='section-id-108'/>
 
 ### Hashmaps 
 Clojure doesn't use structures the way Racket does. Instead it uses hashmaps: collections of key/value pairs surrounded by curly braces. For the purposes of this study we consider only hashmaps in which keys are a special Clojure datatype known as keywords. Keywords are any names preceded by a colon `:`. For instance, the following hashmap 
@@ -126,6 +159,8 @@ If there is no value for a keyword in a hashmap, `nil` is returned:
 (:z point1) ; results in nil
 ```
 Hashmaps are immutable. 
+
+<div id='section-id-130'/>
 
 ### Lists and common list functions
 There is a variety of different ways of producing list-like data sequences in Clojure, but the ones used in Racket work in Clojure as well. Note that Clojure prints back lists without the "list" constructor or a quote. 
@@ -167,6 +202,8 @@ Just like in Racket, one can use `cons` to create a new list with an element add
 ```
 Documentation on [cons](https://clojuredocs.org/clojure.core/cons)
 
+<div id='section-id-170'/>
+
 ### Recursion on lists
 Recursive functions in Clojure can be written exactly the same way as in Racket, with the exception of a slightly different syntax for specifying the function name and parameters. Below is the function that adds up all the numbers in a list of numbers: 
 ```clojure 
@@ -190,6 +227,8 @@ The next example shows a recursive function with two parameters that creates a l
 (take-n '(2 5 6 7 1) 10) ; results in (list 2 5 6 7 1)
 (take-n '(2 5 6 7 1) 0) ; results in an empty list
 ```
+
+<div id='section-id-194'/>
 
 ### map, reduce, and similar functions on lists
 Clojure has `map` and `filter` function that can be used exactly the same as the corresponding Racket functions:
@@ -221,6 +260,8 @@ For consistency with Racket we are using the version of reduce with three argume
 (reduce str "" '("Hi " "there," " " "how " "are " "you?")) ; results in "Hi there, how are you?"
 ```
 Documentation for [reduce](https://clojuredocs.org/clojure.core/reduce)
+
+<div id='section-id-225'/>
 
 ### Anonymous functions 
 Just like in Racket, anonymous fucntions are often used as parameters for `map`, `reduce`, and other higher-order functions. 
