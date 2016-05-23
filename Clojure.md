@@ -198,10 +198,14 @@ Clojure has `map` and `filter` function that can be used exactly the same as the
 (map inc '(3 2 -1)) ; results in the list (4 3 0)
 ;; creating a list of string lengths:
 (map count '("hi" "bye" "")) ; results in the list (2 3 0)
-```
-Documentation for [map](https://clojuredocs.org/clojure.core/map)
 
-TO-DO: filter
+(filter odd? '(2 3 5 4 0 7)) ; results in (list 3 5 7)
+(defn short? [s]
+  (<= (count s) 5))
+
+(filter short? '("apple" "avocado" "kiwi" "banana")) ; results in the list ("apple" "kiwi")
+```
+Documentation for [map](https://clojuredocs.org/clojure.core/map), [filter](https://clojuredocs.org/clojure.core/filter)
 
 TO-DO: switched arguments of reduce; do I need to explain the case without the base? 
 ```clojure 
