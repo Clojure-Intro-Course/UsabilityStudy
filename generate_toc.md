@@ -2,6 +2,6 @@
 
 Run the following in the console:
 
-  chmod +x summarizeMD
-  
-  ./summarizeMD [filename].md --output [filename].md
+    chmod +x summarizeMD
+
+    ./summarizeMD [filename].md --output [filename].md
