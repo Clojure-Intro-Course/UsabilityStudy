@@ -211,20 +211,31 @@ A Clojure function similar to Racket's `foldr` is called `reduce`. There are two
 
 TO-DO: switched arguments of reduce.  
 
-For consistency with Racket we will be using the version of reduce with three arguments:
+For consistency with Racket we are using the version of reduce with three arguments:
 ```clojure 
 (def numbers '(3 5 4))
 (reduce + 0 numbers) ; results in 12
 
 ;; combining all strings in a list into one string
 ;; str plays a role of string-append
-(reduce str "" '("Hi " "there," " " "how " "are " "you?"))
+(reduce str "" '("Hi " "there," " " "how " "are " "you?")) ; results in "Hi there, how are you?"
 ```
 Documentation for [reduce](https://clojuredocs.org/clojure.core/reduce)
 
 ### Anonymous functions 
-Just like in Racket, anonymous fucntions are used 
-There are different ways of declaring 
+Just like in Racket, anonymous fucntions are often used as parameters for `map`, `reduce`, and other higher-order functions. 
+There are different ways of declaring anonymous functions in Clojure. Our examples use the `fn` keyword for this purpose. 
+The syntax is very similar to `defn`, except that instead of `defn` and the function name we use `fn`. 
+
+For instance, `fn [x] (+ x 2)` is a function that takes one parameter `x` and returns `x` incremented by 2. If we map this function over a list, we create a new list in which every element is obtained from the given list by adding 2. Functions passed to `map` or to any other higher-order functions must be included in parentheses. 
+```clojure 
+(map (fn [x] (+ x 2))  '(2 3 1)) ;; results in the list (4 5 3)
+```
+Here `filter` uses an anonymous function `fn [x] (>= x 5)` to select all elements of a list that are 5 or larger. 
+```clojure 
+(filter (fn [x] (>= x 5)) '(5 2 6 7 1 8)) ; results in the list (5 6 7 8)
+```
+
 ```clojure 
 
 ```
