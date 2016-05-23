@@ -74,7 +74,7 @@ However, there is a difference in how Clojure and Racket determine if a value is
 ```
 See documentation on [if](https://clojuredocs.org/clojure.core/if).
 
-`cond` is also very similar to Racket (and just like `if`, it interprets any non-false and non-nil value as true). A slight difference is that the final `else` case of `cond` is written as `:else`.  - THIS IS ACTUALLY NOT TRUE (different syntax)
+`cond` is also similar to Racket. However, it doesn't have brackets around each case: `cond` keyword is followed by pairs in which the first element is a condition, and the second is the resulting value if that condition is true. Just like in Racket, the else clause is optional. If it is given, it is indicated by `:else` (not the colon in the front). In the example below if `n` is less than 5, then "apple" is returned, if it's greater than 5 then "banana" is returned, and in the remaining case (`n` equals to 5) "orange" is returned. 
 ```clojure 
 (cond
   (< n 5) "apple"
@@ -83,15 +83,47 @@ See documentation on [if](https://clojuredocs.org/clojure.core/if).
 ```
 See documentation on [cond](https://clojuredocs.org/clojure.core/cond).
 
+`and` and `or` allow you to combine conditions and `not` negates a condition, just like in Racket. The only difference is that instead of taking only boolean (true/false) expressions, Clojure allows any values to be combined using `and`, `or`, and `not`. The only values that are interpreted as false are `false` and `nil`. Everything else is considered true. 
 ```clojure 
-
+(and (< 2 3) (<= 6 5)) ; results in false
+(or (< 2 3) (<= 6 5)) ; results in true
+(not (and (< 2 3) (<= 6 5))) ; results in true
+(not (or (< 2 3) (<= 6 5))) ; results in false
 ```
-
-### Hashmaps 
-
-### Lists and common lists functions
+See documentation for [and](https://clojuredocs.org/clojure.core/and), [or](https://clojuredocs.org/clojure.core/or), and [not](https://clojuredocs.org/clojure.core/not).
 
 ### nil
+`nil` is a special value in Clojure. You can think of it as meaning "nothing" or "no answer". The convention is to return `nil` from functions that do not return any meaningful value, as you will see below for hashmaps and lists. `nil` is different from any other value in Clojure. 
+
+As you have seen above, `nil` is interpreted to be false in boolean expressions:
+```clojure 
+(if nil 2 3) ; results in 3
+``` 
+
+### Hashmaps 
+Clojure doesn't use structures the way Racket does. Instead it uses hashmaps: collections of key/value pairs surrounded by curly braces. For the purposes of this study we consider only hashmaps in which keys are a special Clojure datatype known as keywords. Keywords are any names preceded by a colon `:`. For instance, the following hashmap 
+```clojure 
+{:x 50, :y 100} ; hashmap in which :x has a value 50, and :y has a value 100
+```
+Note that commas are optional: the same hashmap can be written as `{:x 50 :y 100}`.
+
+Hashmaps can be stored in variables:
+```clojure 
+(def point1 {:x 50, :y 100} ) ; point1 now refers to the hashmap
+```
+Keywords can be used as selectors for hashmap fields. For instance, assuming that `point1` is defined as above, we can get its x and y values like this: 
+```clojure 
+(:x point1) ; results in 50
+(:y point1) ; results in 100
+```
+If there is no value for a keyword in a hashmap, `nil` is returned:
+```clojure 
+(:z point1) ; results in nil
+```
+Hashmaps are immutable. 
+
+### Lists and common list functions
+
 
 ### Recursion on lists
 
