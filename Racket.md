@@ -1,36 +1,30 @@
-#Table of Contents
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-  - [Review of Racket](#section-id-1)
-    - [How to run a Racket program](#section-id-7)
-    - [Prefix notation](#section-id-12)
-    - [Defining functions and variables](#section-id-20)
-    - [Common functions on numbers and strings](#section-id-34)
-    - [Conditionals: 'if', 'cond', and combining conditions](#section-id-53)
-    - [Defining and using structures](#section-id-82)
-    - [Lists](#section-id-100)
-    - [Common functions on lists](#section-id-111)
-    - [Recursion on lists](#section-id-136)
-    - [map, foldr, and other functions on lists](#section-id-165)
-    - [Anonymous functions with lambda](#section-id-197)
+	- [Review of Racket](#review-of-racket)
+		- [How to run a Racket program](#how-to-run-a-racket-program)
+		- [Prefix notation](#prefix-notation)
+		- [Defining functions and variables](#defining-functions-and-variables)
+		- [Common functions on numbers and strings](#common-functions-on-numbers-and-strings)
+		- [Conditionals: 'if', 'cond', and combining conditions](#conditionals-if-cond-and-combining-conditions)
+		- [Defining and using structures](#defining-and-using-structures)
+		- [Lists](#lists)
+		- [Common functions on lists](#common-functions-on-lists)
+		- [Recursion on lists](#recursion-on-lists)
+		- [map, foldr, and other functions on lists](#map-foldr-and-other-functions-on-lists)
+		- [Anonymous functions with lambda](#anonymous-functions-with-lambda)
 
-
-
-<div id='section-id-1'/>
-
-## Review of Racket
+<!-- /TOC -->## Review of Racket
 
 You will be using [Intermediate Student with lambda](https://docs.racket-lang.org/htdp-langs/intermediate-lam.html) level of Racket. Also make sure that in "Choose language" menu the Constant Style is set to "true false empty".
 
 Below is a very brief review of Racket elements used in this study, with examples and links to Racket documentation.
 
-<div id='section-id-7'/>
 
 ### How to run a Racket program
 Copy-paste the examples into the upper panel of the Racket window. You can run your program by pressing the Run button or Ctrl-R. The results and error messages will appear in the lower panel.
 
 If your program starts and doesn't stop (the little figure in the right lower corner is running), press the red square at the top right to stop it.
 
-<div id='section-id-12'/>
 
 ### Prefix notation
 Racket follows prefix notation, i.e. expressions are of the form `(function arg1 arg2...)`:
@@ -40,7 +34,6 @@ Racket follows prefix notation, i.e. expressions are of the form `(function arg1
 (<= 4 3) ; returns false
 ```
 
-<div id='section-id-20'/>
 
 ### Defining functions and variables
 ```racket
@@ -56,7 +49,6 @@ Racket follows prefix notation, i.e. expressions are of the form `(function arg1
 ```
 Documentation for [define](https://docs.racket-lang.org/htdp-langs/intermediate-lam.html#%28form._%28%28lib._lang%2Fhtdp-intermediate-lambda..rkt%29._define%29%29)
 
-<div id='section-id-34'/>
 
 ### Common functions on numbers and strings
 Coomon functions on numbers include the standard arithmetic operations and some predicates that allow us to check whether a number has a given property (for instance, whether it's even). There are functions `add1` and `sub1` that return the next or the previous integer for a given integer, see examples below. There are also many functions on strings, but our examples do not use them much. The `string-length` function below is a reminder of how string functions work in Racket.
@@ -77,7 +69,6 @@ Coomon functions on numbers include the standard arithmetic operations and some 
 ```
 Documentation for [common numeric functions](https://docs.racket-lang.org/htdp-langs/beginner.html#%28part._htdp-beginner._.Numbers__.Integers__.Rationals__.Reals__.Complex__.Exacts__.Inexacts%29)
 
-<div id='section-id-53'/>
 
 ### Conditionals: 'if', 'cond', and combining conditions
 The `if` statement is an expression that checks a if a condition is true, and one of the remaining two arguments, depending on whether the condition is true or false:
@@ -108,7 +99,6 @@ You can combine conditions using `and` and `or` and negate them using `not`:
 ```
 Links for more details on [`and` and `or`](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._and%29%29).
 
-<div id='section-id-82'/>
 
 ### Defining and using structures
 Structures allow you to combine multiple data items into one entity with multiple fields. A structure datatype is defined by `define-struct`, and structure instances are created by `make-` followed by the structure name (known as a _constructor_):
@@ -128,7 +118,6 @@ To access a specific field of a structure, you need to use a selector. A selecto
 ```
 Links for more details on [structures](https://docs.racket-lang.org/htdp-langs/beginner.html#%28form._%28%28lib._lang%2Fhtdp-beginner..rkt%29._define-struct%29%29) and the [textbook chapter on structures](http://www.ccs.neu.edu/home/matthias/HtDP2e/part_one.html#%28part._sec~3astructures%29)
 
-<div id='section-id-100'/>
 
 ### Lists
 There are multiple ways of creating lists in Racket. We will be using the quote symbol `'` to create a list:
@@ -141,7 +130,6 @@ It is possible to combine different types of elements in the same list:
 ```
 A list with no elements is known as an empty list and can be created as`'()` or, equivalently, as `empty`.
 
-<div id='section-id-111'/>
 
 ### Common functions on lists
 Common functions on lists include `first` (returns the first element of a list), `rest` (returns the rest of the list), and a predicate `empty?` that returns `true` if the list is empty and `false` otherwise:
@@ -168,7 +156,6 @@ The original list is unchanged.
 
 See documentation for [cons](https://docs.racket-lang.org/htdp-langs/beginner.html#%28def._htdp-beginner._%28%28lib._lang%2Fhtdp-beginner..rkt%29._cons%29%29)
 
-<div id='section-id-136'/>
 
 ### Recursion on lists
 Recursion on lists typically involves the base case of an empty list and a recursive case that
@@ -199,7 +186,6 @@ There may be cases when a recursive function takes more than one parameter. The 
 
 <!--- TO-DO: need to be careful to avoid the study examples. --->
 
-<div id='section-id-165'/>
 
 ### map, foldr, and other functions on lists
 Higher order functions on lists, such as `map, filter, foldr` provide a way of performing many types of common list operations without having to write recursive functions.
@@ -233,7 +219,6 @@ We can also use `foldr` to combine all strings in a list into one string:
 ```
 See documentation for [foldr](https://docs.racket-lang.org/htdp-langs/intermediate-lam.html#%28def._htdp-intermediate-lambda._%28%28lib._lang%2Fhtdp-intermediate-lambda..rkt%29._foldr%29%29)
 
-<div id='section-id-197'/>
 
 ### Anonymous functions with lambda
 Calling higher-order functions, such as `map,filter`, etc., with simple, but not predefined, functions can be done by creating a function without a name (i.e. anonymous) on-the-fly using a `lambda` keyword.
