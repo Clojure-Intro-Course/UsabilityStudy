@@ -162,9 +162,29 @@ Just like in Racket, one can use `cons` to create a new list with an element add
 ```
 Documentation on [cons](https://clojuredocs.org/clojure.core/cons)
 
-TO-DO: add `cons` to Racket. 
-
 ### Recursion on lists
+Recursive functions in Clojure can be written exactly the same way as in Racket, with the exception of a slightly different syntax for specifying the function name and parameters. Below is the function that adds up all the numbers in a list of numbers: 
+```clojure 
+(defn add-all [numbers]
+  (if (empty? numbers)
+      0 ; base case
+      (+ (first numbers) (add-all (rest numbers))))) ; recursive call
+
+(add-all '(3 4 5 2)) ; results in 14
+
+(add-all '()) ; results in 0
+```
+The next example shows a recursive function with two parameters that creates a list of the first n elements of a given list:
+```clojure 
+(defn take-n [elements n]
+  (if (or (empty? elements) (<= n 0))
+    '()
+    (cons (first elements) (take-n (rest elements) (- n 1)))))
+
+(take-n '(2 5 6 7 1) 3) ; results in (list 2 5 6)
+(take-n '(2 5 6 7 1) 10) ; results in (list 2 5 6 7 1)
+(take-n '(2 5 6 7 1) 0) ; results in an empty list
+```
 
 ### map, reduce, and similar functions on lists
 
