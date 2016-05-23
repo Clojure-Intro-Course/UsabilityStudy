@@ -1,19 +1,6 @@
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-	- [Brief Overview of Clojure](#brief-overview-of-clojure)
-		- [How to run a Clojure program](#how-to-run-a-clojure-program)
-		- [Syntax](#syntax)
-		- [Defining variables and functions](#defining-variables-and-functions)
-		- [Common functions](#common-functions)
-		- [Conditionals: 'if', 'cond', and combining conditions](#conditionals-if-cond-and-combining-conditions)
-		- [nil](#nil)
-		- [Hashmaps](#hashmaps)
-		- [Lists and common list functions](#lists-and-common-list-functions)
-		- [Recursion on lists](#recursion-on-lists)
-		- [map, reduce, and similar functions on lists](#map-reduce-and-similar-functions-on-lists)
-		- [Anonymous functions](#anonymous-functions)
 
-<!-- /TOC -->## Brief Overview of Clojure
+## Brief Overview of Clojure
 
 This is a very brief overview of a subset of Clojure features for those familiar with the Racket programming language. It is intended for a usability study at UMM and assumes a non-standard Clojure environment.
 
