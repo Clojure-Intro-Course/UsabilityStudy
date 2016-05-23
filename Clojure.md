@@ -235,7 +235,8 @@ Here `filter` uses an anonymous function `fn [x] (>= x 5)` to select all element
 ```clojure 
 (filter (fn [x] (>= x 5)) '(5 2 6 7 1 8)) ; results in the list (5 6 7 8)
 ```
-
+TO-DO: explain the order of parameters
 ```clojure 
-
+(reduce (fn [x y] (+ x (count y))) 0 '("hi" "bye" "hello")) ; results in 10
 ```
+Documentation for [fn](https://clojuredocs.org/clojure.core/fn)
