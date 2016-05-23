@@ -1,3 +1,23 @@
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Racket](#racket)
+	- [Review of Racket](#review-of-racket)
+		- [How to run a Racket program](#how-to-run-a-racket-program)
+		- [Prefix notation](#prefix-notation)
+		- [Defining functions and variables](#defining-functions-and-variables)
+		- [Common functions on numbers and strings](#common-functions-on-numbers-and-strings)
+		- [Conditionals: 'if', 'cond', and combining conditions](#conditionals-if-cond-and-combining-conditions)
+		- [Defining and using structures](#defining-and-using-structures)
+		- [Lists](#lists)
+		- [Common functions on lists](#common-functions-on-lists)
+		- [Recursion on lists](#recursion-on-lists)
+		- [map, foldr, and other functions on lists](#map-foldr-and-other-functions-on-lists)
+		- [Anonymous functions with lambda](#anonymous-functions-with-lambda)
+
+<!-- /TOC -->
+
+# Racket
+
 ## Review of Racket
 
 You will be using [Intermediate Student with lambda](https://docs.racket-lang.org/htdp-langs/intermediate-lam.html) level of Racket. Also make sure that in "Choose language" menu the Constant Style is set to "true false empty".

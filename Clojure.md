@@ -1,4 +1,22 @@
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+- [Clojure](#clojure)
+	- [Brief Overview of Clojure](#brief-overview-of-clojure)
+		- [How to run a Clojure program](#how-to-run-a-clojure-program)
+		- [Syntax](#syntax)
+		- [Defining variables and functions](#defining-variables-and-functions)
+		- [Common functions](#common-functions)
+		- [Conditionals: 'if', 'cond', and combining conditions](#conditionals-if-cond-and-combining-conditions)
+		- [nil](#nil)
+		- [Hashmaps](#hashmaps)
+		- [Lists and common list functions](#lists-and-common-list-functions)
+		- [Recursion on lists](#recursion-on-lists)
+		- [map, reduce, and similar functions on lists](#map-reduce-and-similar-functions-on-lists)
+		- [Anonymous functions](#anonymous-functions)
+
+<!-- /TOC -->
+
+# Clojure
 
 ## Brief Overview of Clojure
 
