@@ -207,10 +207,24 @@ Clojure has `map` and `filter` function that can be used exactly the same as the
 ```
 Documentation for [map](https://clojuredocs.org/clojure.core/map), [filter](https://clojuredocs.org/clojure.core/filter)
 
-TO-DO: switched arguments of reduce; do I need to explain the case without the base? 
+A Clojure function similar to Racket's `foldr` is called `reduce`. There are two versions of `reduce`: the one with three arguments that is pretty much the same as `foldr` (on symmetric functions, such as `+`; we are not considering non-symmetric functions such as `-`), and the one with two arguments that essentially uses the first element of the list as a base. 
+
+TO-DO: switched arguments of reduce.  
+
+For consistency with Racket we will be using the version of reduce with three arguments:
 ```clojure 
+(def numbers '(3 5 4))
+(reduce + 0 numbers) ; results in 12
+
+;; combining all strings in a list into one string
+;; str plays a role of string-append
+(reduce str "" '("Hi " "there," " " "how " "are " "you?"))
 ```
+Documentation for [reduce](https://clojuredocs.org/clojure.core/reduce)
 
 ### Anonymous functions 
+Just like in Racket, anonymous fucntions are used 
+There are different ways of declaring 
 ```clojure 
+
 ```
