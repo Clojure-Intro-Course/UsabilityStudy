@@ -28,48 +28,48 @@ class MDUtils
 		tmpfilename = "tmp_00_" + timeNow.inspect + ".md"
 		temp_file = File.new(tmpfilename, "w")
 
-		summary = "\#Summary \n\n"
+		summary = "\#Table of Contents \n\n"
 		forbidden_words = ['Table of contents', 'define', 'pragma']
 
 		File.open(filename, 'r') do |f|
-			if options.verbose 
+			if options.verbose
 				puts "Generate summary for section(s): "
 			end
 			f.each_line do |line|
-		    	if !(!line.start_with?("#") || forbidden_words.any? { |w| line =~ /#{w}/ }) 
+		    	if !(!line.start_with?("#") || forbidden_words.any? { |w| line =~ /#{w}/ })
 			    	title = line.gsub("#", "").strip
 				    href = "section-id-#{$.}"
 				    anchor = "<div id='#{href}'/>\n\n"
 				    temp_file.puts anchor + line
 				    summary += "  " * (line.count("#")-1) + "- [#{title}](\##{href})" + "\n"
-				    if options.verbose 
+				    if options.verbose
 				    	puts "\t- [#{title}]"
 				    end
 			 	else
 			 		temp_file.puts line
-			 	end   
+			 	end
 		   	end
 
 			temp_file.close
 			summary += "  \n\n"
 			outputFilename = "summarized_" + filename
-			if !options.output.empty? 
+			if !options.output.empty?
 				outputFilename = options.output
 				outputComponents = outputFilename.split(".")
 
-				if outputComponents.last.downcase != "md" 
+				if outputComponents.last.downcase != "md"
 					outputFilename += ".md"
-					if options.verbose 
+					if options.verbose
 				    	puts "Forcing adding extension."
 				    end
 				end
-				
+
 			end
 			system("echo \"#{summary}\" | cat - #{tmpfilename} > #{outputFilename}")
 		    system("rm #{tmpfilename}")
 		    puts "Done.\n"
 		end
-	end #(end summarize)	
+	end #(end summarize)
 
 end
 
@@ -123,8 +123,8 @@ class OptparseSummarize
       end
     end
 
-    opt_parser.parse!(args) 
-  
+    opt_parser.parse!(args)
+
     options
   end  # parse()
 
@@ -136,4 +136,3 @@ end  # class OptparseExample
 options = OptparseSummarize.parse(ARGV)
 
 mdUtils = MDUtils.summarize([ARGV[0], options]);
-
