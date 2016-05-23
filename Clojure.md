@@ -52,11 +52,40 @@ Many functions on numbers are the the same in Clojure and Racket. This includes 
 ;; predicates (functions that return true/false) often end with ?
 (even? 3) ; results in false
 (odd? 3) ; results in true
-
-TO-DO: inc, dec
 ```
+Clojure uses `inc` for "increment" function (the same as `add1` in Racket) and `dec` for "decrement" (the same as `sub1` in Racket):
+```clojure 
+(inc 5) ; results in 6
+(dec 5) ;results in 4
+```
+See documentation for [numeric functions](https://clojuredocs.org/quickref#numbers).
 
 ### Conditionals: 'if', 'cond', and combining conditions
+Conditions in Clojure are very similar to those in Racket. For instance, `if` looks identical to that in Racket:
+```clojure 
+(def n 5)
+(if (< n 10) 2 3) ; results in 2
+(if (< n 2) 2 3)  ; returns 3
+```
+However, there is a difference in how Clojure and Racket determine if a value is true or false. In Racket the expression in the condition of `if` must evaluate to a boolean (true or false). In Clojure any result other than `false` and `nil` (that is covered later in this overview) is considered to be true. For instance, any number (including 0) is considered to be true:
+```clojure 
+(if 5 "yes" "no") ; results in "yes"
+(if 0 "yes" "no") ; also results in "yes"
+```
+See documentation on [if](https://clojuredocs.org/clojure.core/if).
+
+`cond` is also very similar to Racket (and just like `if`, it interprets any non-false and non-nil value as true). A slight difference is that the final `else` case of `cond` is written as `:else`.  - THIS IS ACTUALLY NOT TRUE (different syntax)
+```clojure 
+(cond
+  (< n 5) "apple"
+  (> n 5) "banana"
+  :else "orange")
+```
+See documentation on [cond](https://clojuredocs.org/clojure.core/cond).
+
+```clojure 
+
+```
 
 ### Hashmaps 
 
