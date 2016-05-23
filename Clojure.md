@@ -123,7 +123,46 @@ If there is no value for a keyword in a hashmap, `nil` is returned:
 Hashmaps are immutable. 
 
 ### Lists and common list functions
+There is a variety of different ways of producing list-like data sequences in Clojure, but the ones used in Racket work in Clojure as well. Note that Clojure prints back lists without the "list" constructor or a quote. 
+```clojure 
+(list 1 2 3) ; results in list (1 2 3)
+'(1 2 3) ; also results in list (1 2 3)
+```
+Just like in Racket, it is possible to combine different types of elements in the same list:
+```clojure 
+'(1 "two" 3.0001) 
+```
+An empty list can be represented as `(lsit )` or `'()`. 
 
+Documentation on [list constructor](https://clojuredocs.org/clojure.core/list)
+
+Just like in Racket, one can use `first` and `rest` on lists and check if a list is empty with `empty?`: 
+```clojure 
+(def  numbers '(3 5 4))
+(def short-list '(7))
+
+(first numbers) ; results in 3
+(first short-list) ; results in 7
+(rest numbers) ; results in (list 5 4)
+(rest short-list) ; results in the list ()
+(empty? numbers) ; results in false
+(empty? short-list) ; results in false
+(empty? (rest short-list)) ; results in true
+```
+However, unlike in Racket, calling `first` and `rest` on an empty list is not an error: `first` on an empty list returns `nil`, and `rest` on an empty list returns an empty list:
+```clojure 
+(first '()) ; results in nil
+(rest '()) ; results in the list ()
+```
+
+Just like in Racket, one can use `cons` to create a new list with an element added in the front of a given list:
+```clojure 
+(def numbers '(3 5 4))
+(cons 0 numbers) ; results in (0 3 5 4)
+```
+Documentation on [cons](https://clojuredocs.org/clojure.core/cons)
+
+TO-DO: add `cons` to Racket. 
 
 ### Recursion on lists
 
