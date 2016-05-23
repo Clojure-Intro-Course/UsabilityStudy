@@ -1,0 +1,19 @@
+{
+  "name": "usabilitystudy",
+  "version": "1.0.0",
+  "description": "clojure usability study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Clojure-Intro-Course/UsabilityStudy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Clojure-Intro-Course/UsabilityStudy/issues"
+  },
+  "homepage": "https://github.com/Clojure-Intro-Course/UsabilityStudy#readme"
+}
