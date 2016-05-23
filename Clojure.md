@@ -60,6 +60,11 @@ Clojure uses `inc` for "increment" function (the same as `add1` in Racket) and `
 ```
 See documentation for [numeric functions](https://clojuredocs.org/quickref#numbers).
 
+The length of a string is computed using the function `count`:
+```clojure 
+(count "abc") ; results in 3
+```
+
 ### Conditionals: 'if', 'cond', and combining conditions
 Conditions in Clojure are very similar to those in Racket. For instance, `if` looks identical to that in Racket:
 ```clojure 
@@ -187,5 +192,21 @@ The next example shows a recursive function with two parameters that creates a l
 ```
 
 ### map, reduce, and similar functions on lists
+Clojure has `map` and `filter` function that can be used exactly the same as the corresponding Racket functions:
+```clojure 
+;; mapping inc (increment) function:
+(map inc '(3 2 -1)) ; results in the list (4 3 0)
+;; creating a list of string lengths:
+(map count '("hi" "bye" "")) ; results in the list (2 3 0)
+```
+Documentation for [map](https://clojuredocs.org/clojure.core/map)
+
+TO-DO: filter
+
+TO-DO: switched arguments of reduce; do I need to explain the case without the base? 
+```clojure 
+```
 
 ### Anonymous functions 
+```clojure 
+```
