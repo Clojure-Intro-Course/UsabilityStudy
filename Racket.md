@@ -124,6 +124,15 @@ Common functions on lists include `first` (returns the first element of a list),
 ```
 Applying `first` or `rest` to an empty list results in an error. 
 
+The function `cons` creates a new list by adding an element at the front of a given list: 
+```racket
+(cons 0 '(3 5 4)) ; results in (list 0 3 4 5)
+(cons 1 '()) ; results in (list 1)
+```
+The original list is unchanged. 
+
+See documentation for [cons](https://docs.racket-lang.org/htdp-langs/beginner.html#%28def._htdp-beginner._%28%28lib._lang%2Fhtdp-beginner..rkt%29._cons%29%29)
+
 ### Recursion on lists
 Recursion on lists typically involves the base case of an empty list and a recursive case that
 combines some operation on the first of the list with the result of a recursive call on the rest of the list. 
