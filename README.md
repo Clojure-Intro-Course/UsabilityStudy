@@ -36,9 +36,9 @@ Note: Every time you open Atom you will have to manually update the Table of
 
 #### Creating a new Table of Contents for a markdown without one
 
-  Note: The generator will not work if your markdown skips a depth (i.e. inludes ## and #### but no ###)
+  Note: The generator will not work if your markdown skips a depth (i.e. includes ## and #### but no ###)
 
-  1. Move the first of your markdown down a line or two (i.e. not line 1) and click in line 1. (The table of contents will be inserted wherever you are actively editing.)
+  1. Move the first line of your markdown down a line or two (i.e. not line 1) and click in line 1. (The table of contents will be inserted wherever you are actively editing.)
   2. Open package command list (cntrl-shift-p)
   3. Search for "Markdown-toc Toggle." If found, click it. Otherwise, search for "Markdown-toc Create" and click it instead.
 
