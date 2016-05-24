@@ -28,7 +28,7 @@
   1. Open package command list (cntrl-shift-p)
   2. Search for "Markdown-toc Update" and click it
 
-From now on, the Table of Contents will update every time the markdown is
+From now on, the Table of Contents will automatically update every time the markdown is
   saved in Atom.
 
 Note: Every time you open Atom you will have to manually update the Table of
