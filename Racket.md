@@ -21,6 +21,7 @@ You will be using [Intermediate Student with lambda](https://docs.racket-lang.or
 
 Below is a very brief review of Racket elements used in this study, with examples and links to Racket documentation.
 
+## Test Line for ToC
 
 ### How to run a Racket program
 Copy-paste the examples into the upper panel of the Racket window. You can run your program by pressing the Run button or Ctrl-R. The results and error messages will appear in the lower panel.
