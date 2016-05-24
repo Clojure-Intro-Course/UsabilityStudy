@@ -106,6 +106,13 @@ See documentation on [if](https://clojuredocs.org/clojure.core/if).
   (> n 5) "banana"
   :else "orange")
 ```
+Recall that `cond` in Racket fails when none of the cases match and there is no `else` case. Unlike Racket, Clojure `cond` returns `nil` if none of the cases match:
+```clojure
+(cond 
+  (> 2 3) "yes" 
+  (> 3 4) "no") ; results in nil
+```
+
 See documentation on [cond](https://clojuredocs.org/clojure.core/cond).
 
 `and` and `or` allow you to combine conditions and `not` negates a condition, just like in Racket. The only difference is that instead of taking only boolean (true/false) expressions, Clojure allows any values to be combined using `and`, `or`, and `not`. The only values that are interpreted as false are `false` and `nil`. Everything else is considered true.
