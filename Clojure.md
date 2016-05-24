@@ -63,7 +63,7 @@ See documentation on [def](https://clojuredocs.org/clojure.core/def) and [defn](
 
 
 ### Common functions
-Many functions on numbers are the the same in Clojure and Racket. This includes most of arithmetic operations, comparisons, and predicates:
+Many functions on numbers are the the same in Clojure and Racket. This includes most arithmetic operations, comparisons, and predicates:
 ```clojure
 ;; common functions on numbers
 (+ 2 3) ; results in 5
@@ -92,14 +92,14 @@ Conditions in Clojure are very similar to those in Racket. For instance, `if` lo
 (if (< n 10) 2 3) ; results in 2
 (if (< n 2) 2 3)  ; returns 3
 ```
-However, there is a difference in how Clojure and Racket determine if a value is true or false. In Racket the expression in the condition of `if` must evaluate to a boolean (true or false). In Clojure any result other than `false` and `nil` (that is covered later in this overview) is considered to be true. For instance, any number (including 0) is considered to be true:
+However, there is a difference in how Clojure and Racket determine if a value is true or false. In Racket the expression in the condition of `if` must evaluate to a boolean (true or false). In Clojure any result other than `false` or `nil` (that is covered later in this overview) is considered to be true. For instance, any number (including 0) is considered to be true:
 ```clojure
 (if 5 "yes" "no") ; results in "yes"
 (if 0 "yes" "no") ; also results in "yes"
 ```
 See documentation on [if](https://clojuredocs.org/clojure.core/if).
 
-`cond` is also similar to Racket. However, it doesn't have brackets around each case: `cond` keyword is followed by pairs in which the first element is a condition, and the second is the resulting value if that condition is true. Just like in Racket, the else clause is optional. If it is given, it is indicated by `:else` (not the colon in the front). In the example below if `n` is less than 5, then "apple" is returned, if it's greater than 5 then "banana" is returned, and in the remaining case (`n` equals to 5) "orange" is returned.
+`cond` is also similar to Racket. However, it doesn't have brackets around each case: `cond` keyword is followed by pairs in which the first element is a condition, and the second is the resulting value if that condition is true. Just like in Racket, the else clause is optional. If it is given, it is indicated by `:else` (note the colon in the front). In the example below, if `n` is less than 5 then "apple" is returned, if it's greater than 5 then "banana" is returned, and in the remaining case (`n` equals to 5) "orange" is returned.
 ```clojure
 (cond
   (< n 5) "apple"
@@ -151,7 +151,7 @@ Hashmaps are immutable.
 
 
 ### Lists and common list functions
-There is a variety of different ways of producing list-like data sequences in Clojure, but the ones used in Racket work in Clojure as well. Note that Clojure prints back lists without the "list" constructor or a quote.
+There are a variety of different ways of producing list-like data sequences in Clojure, but the ones used in Racket work in Clojure as well. Note that Clojure prints back lists without the "list" constructor or a quote.
 ```clojure
 (list 1 2 3) ; results in list (1 2 3)
 '(1 2 3) ; also results in list (1 2 3)
@@ -160,7 +160,7 @@ Just like in Racket, it is possible to combine different types of elements in th
 ```clojure
 '(1 "two" 3.0001)
 ```
-An empty list can be represented as `(lsit )` or `'()`.
+An empty list can be represented as `(list )` or `'()`.
 
 Documentation on [list constructor](https://clojuredocs.org/clojure.core/list)
 
