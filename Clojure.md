@@ -135,7 +135,9 @@ As you have seen above, `nil` is interpreted to be false in boolean expressions:
 
 
 ### Hashmaps
-Clojure doesn't use structures the way Racket does. Instead it uses hashmaps: collections of key/value pairs surrounded by curly braces. For the purposes of this study we consider only hashmaps in which keys are a special Clojure datatype known as keywords. Keywords are any names preceded by a colon `:`. For instance, the following hashmap
+Clojure doesn't use structures the way Racket does. Instead it uses hashmaps: collections of key/value pairs surrounded by curly braces. Hashmap are also referred to as just maps. 
+
+For the purposes of this study we consider only hashmaps in which keys are a special Clojure datatype known as keywords. Keywords are any names preceded by a colon `:`. For instance, the following hashmap
 ```clojure
 {:x 50, :y 100} ; hashmap in which :x has a value 50, and :y has a value 100
 ```
