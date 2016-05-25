@@ -53,7 +53,7 @@ Documentation for [define](https://docs.racket-lang.org/htdp-langs/intermediate-
 
 
 ### Common functions on numbers and strings
-Coomon functions on numbers include the standard arithmetic operations and some predicates that allow us to check whether a number has a given property (for instance, whether it's even). There are functions `add1` and `sub1` that return the next or the previous integer for a given integer, see examples below. There are also many functions on strings, but our examples do not use them much. The `string-length` function below is a reminder of how string functions work in Racket.
+Common functions on numbers include the standard arithmetic operations and some predicates that allow us to check whether a number has a given property (for instance, whether it's even). There are functions `add1` and `sub1` that return the next or the previous integer for a given integer, see examples below. There are also many functions on strings, but our examples do not use them much. The `string-length` function below is a reminder of how string functions work in Racket.
 ```racket
 ;; common functions on numbers
 (+ 2 3) ; results in 5
@@ -130,7 +130,7 @@ It is possible to combine different types of elements in the same list:
 ```racket
 '(1 "two" 3.0001)
 ```
-A list with no elements is known as an empty list and can be created as`'()` or, equivalently, as `empty`.
+A list with no elements is known as an empty list and can be created as `'()` or, equivalently, as `empty`.
 
 
 ### Common functions on lists
@@ -190,7 +190,7 @@ There may be cases when a recursive function takes more than one parameter. The 
 
 
 ### map, foldr, and other functions on lists
-Higher order functions on lists, such as `map, filter, foldr` provide a way of performing many types of common list operations without having to write recursive functions.
+Higher order functions on lists, such as `map`, `filter`, and `foldr`, provide a way of performing many types of common list operations without having to write recursive functions.
 
 `map` takes a function and a list and returns a new list which is the result of applying the function to each element:
 ```racket
@@ -223,7 +223,7 @@ See documentation for [foldr](https://docs.racket-lang.org/htdp-langs/intermedia
 
 
 ### Anonymous functions with lambda
-Calling higher-order functions, such as `map,filter`, etc., with simple, but not predefined, functions can be done by creating a function without a name (i.e. anonymous) on-the-fly using a `lambda` keyword.
+Calling higher-order functions, such as `map`, `filter`, etc., with simple but not predefined functions can be done by creating a function without a name (i.e. an anonymous function) on-the-fly using a `lambda` keyword.
 
 The keyword `lambda` is followed by parameter(s) in parentheses, and then the body of the function. For instance,
 `(lambda (x) (+ x 2))` is a function of one parameter `x` that returns the result of adding 2 to `x`. We can use this function in `map` to create a new list by adding 2 to every element of a given list:
@@ -235,7 +235,7 @@ We can also use anonymous functions in `filter` (the function must return true/f
 (filter (lambda (x) (>= x 5)) '(5 2 6 7 1 8)) ; results in (list 5 6 7 8)
 ```
 
-In the case of `foldr` the anonymous function takes two parameters. The first one is list element, and the second one is the current accumulated result. For instance, the anonymous function below is used to compute the sum of the lengths of all strings in the given list. Here x will refer to each string of the list in turn, and y would respresent the sum of the lengths of all strings to the right of the string x:
+In the case of `foldr`, the anonymous function takes two parameters. The first one is list element, and the second one is the current accumulated result. For instance, the anonymous function below is used to compute the sum of the lengths of all strings in the given list. Here x will refer to each string of the list in turn, and y would respresent the sum of the lengths of all strings to the right of the string x:
 ```racket
 (foldr (lambda (x y) (+ (string-length x) y)) 0 '("hi" "bye" "hello")) ; results in 10
 ```
