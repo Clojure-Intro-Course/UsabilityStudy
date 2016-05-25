@@ -73,7 +73,7 @@ Documentation for [common numeric functions](https://docs.racket-lang.org/htdp-l
 
 
 ### Conditionals: 'if', 'cond', and combining conditions
-The `if` statement is an expression that checks a if a condition is true, and one of the remaining two arguments, depending on whether the condition is true or false:
+The `if` statement is an expression that checks if a condition is true, and returns one of the remaining two arguments: the one immediately following the condition if the condition is true, and the next one if it is false. The other argument is not evaluated. 
 ```racket
 (define n 5)
 (if (< n 10) 2 3) ; returns 2
