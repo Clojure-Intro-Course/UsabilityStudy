@@ -20,10 +20,13 @@ This is a very brief overview of a subset of Clojure features for those familiar
 
 
 ### How to run a Clojure program
-Note: the instrcutions are specific to this usability study.
+Note: the instructions are specific to this usability study.
 
-*TO-DO*: instructions.
+You will have a LightTable file open and a terminal (command prompt) window open. The name of the file will be `test.clj` for our error messages and `test_standard.clj` for the standard Clojure error messages (you will be working with either our messages or the standard ones). 
 
+Copy your code into the file where indicated. Don't forget to save the file (Ctrl-S). In the terminal window type `lein run` for our error messages or `lein run s` for standard ones (after you type the command the first time, you can use "up" arrow and "enter" to run it again). 
+
+There will be a long list of warning displayed in the terminal, ignore those. Your outupt starts with the line of `******`. If no error happens, it ends with the word `Done`. 
 
 ### Syntax
 Just like Racket, Clojure follows the prefix notation: `(function arg1 arg2...)`. A lot of functions on numbers have the same names as in Racket, so all of the following is valid in Clojure as well. Comments are also the same: `;`.
@@ -32,8 +35,11 @@ Just like Racket, Clojure follows the prefix notation: `(function arg1 arg2...)`
 (even? 2) ; returns true
 (<= 4 3) ; returns false
 ```
-TO-DO: println (since the tests will run using println).
-
+In order to display information from your program, you need to use the function `println` (stands for "print line"):
+```clojure
+(println "Hello") ; prints "Hello", returns nil
+```
+All of the tests given to you are included in `println`. If you want to add your own or display intermediate results, make sure to include them in `println`. 
 
 ### Defining variables and functions
 Functions and variable defintions are somewhat different from those in Racket. Variables are defined using the `def` keyword, instead of Racket's `define`:
@@ -270,7 +276,7 @@ Here `filter` uses an anonymous function `fn [x] (>= x 5)` to select all element
 ```clojure
 (filter (fn [x] (>= x 5)) '(5 2 6 7 1 8)) ; results in the list (5 6 7 8)
 ```
-TO-DO: explain the order of parameters
+Here `x` is the element of the list, and `y` is the result accumulated so far. For instance, in the example below `x` would be the currrent string, and `y` would be the sum of the length of strings encountered up to this point. Note that unlike `foldr` in Racket, `reduce` in Clojure traverses the list left-too-right (from the first element to the end).
 ```clojure
 (reduce (fn [x y] (+ x (count y))) 0 '("hi" "bye" "hello")) ; results in 10
 ```
