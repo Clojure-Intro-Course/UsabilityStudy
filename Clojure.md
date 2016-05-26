@@ -26,7 +26,7 @@ You will have a LightTable file open and a terminal (command prompt) window open
 
 Copy your code into the file where indicated. Don't forget to save the file (Ctrl-S). In the terminal window type `lein run` for our error messages or `lein run s` for standard ones (after you type the command the first time, you can use "up" arrow and "enter" to run it again). 
 
-There will be a long list of warning displayed in the terminal, ignore those. Your outupt starts with the line of `******`. If no error happens, it ends with the word `Done`. 
+There will be a long list of warning displayed in the terminal, ignore those. Your output starts with a line of `******`. If no error happens, it ends with the word `Done`. 
 
 ### Syntax
 Just like Racket, Clojure follows the prefix notation: `(function arg1 arg2...)`. A lot of functions on numbers have the same names as in Racket, so all of the following is valid in Clojure as well. Comments are also the same: `;`.
@@ -63,7 +63,7 @@ Functions are defined using the `defn` keyword. The function parameters are incl
 
 (sum-squares -1 2) ; results in 5
 ```
-Just like in Racket, variable and function names may contain letters, digits, dashes, some punctuation symbols (`?` and `!`). The names are case-sensitive.
+Just like in Racket, variable and function names may contain letters, digits, dashes, and some punctuation symbols (`?` and `!`). The names are case-sensitive.
 
 See documentation on [def](https://clojuredocs.org/clojure.core/def) and [defn](https://clojuredocs.org/clojure.core/defn)
 
@@ -268,15 +268,15 @@ Just like in Racket, anonymous fucntions are often used as parameters for `map`,
 There are different ways of declaring anonymous functions in Clojure. Our examples use the `fn` keyword for this purpose.
 The syntax is very similar to `defn`, except that instead of `defn` and the function name we use `fn`.
 
-For instance, `fn [x] (+ x 2)` is a function that takes one parameter `x` and returns `x` incremented by 2. If we map this function over a list, we create a new list in which every element is obtained from the given list by adding 2. Functions passed to `map` or to any other higher-order functions must be included in parentheses.
+For instance, `(fn [x] (+ x 2))` is a function that takes one parameter `x` and returns `x` incremented by 2. If we map this function over a list, we create a new list in which every element is obtained from the given list by adding 2. Functions passed to `map` or to any other higher-order functions must be included in parentheses.
 ```clojure
 (map (fn [x] (+ x 2))  '(2 3 1)) ;; results in the list (4 5 3)
 ```
-Here `filter` uses an anonymous function `fn [x] (>= x 5)` to select all elements of a list that are 5 or larger.
+Here `filter` uses an anonymous function `(fn [x] (>= x 5))` to select all elements of a list that are 5 or larger.
 ```clojure
 (filter (fn [x] (>= x 5)) '(5 2 6 7 1 8)) ; results in the list (5 6 7 8)
 ```
-Here `x` is the element of the list, and `y` is the result accumulated so far. For instance, in the example below `x` would be the currrent string, and `y` would be the sum of the length of strings encountered up to this point. Note that unlike `foldr` in Racket, `reduce` in Clojure traverses the list left-too-right (from the first element to the end).
+Here `x` is the element of the list, and `y` is the result accumulated so far. For instance, in the example below `x` would be the currrent string, and `y` would be the sum of the length of strings encountered up to this point. Note that unlike `foldr` in Racket, `reduce` in Clojure traverses the list left-to-right (from the first element to the end).
 ```clojure
 (reduce (fn [x y] (+ x (count y))) 0 '("hi" "bye" "hello")) ; results in 10
 ```
